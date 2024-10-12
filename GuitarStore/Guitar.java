@@ -1,18 +1,13 @@
 public class Guitar {
 
-    private String serialNumber, model;
-    private Builder builder;
-    private Type type;
-    private Wood wood;
+    private String serialNumber;
+    private GuitarSpec spec;
     private double price;
 
-    public Guitar(String sn, Builder builder, String model, Type type, Wood wood, double price) {
+    public Guitar(String sn, double price,GuitarSpec spec) {
         this.serialNumber = sn;
-        this.builder = builder;
-        this.model = model;
-        this.type = type;
-        this.wood = wood;
         this.price = price;
+        this.spec = spec;
     }
 
     // Getters for each field
@@ -20,23 +15,8 @@ public class Guitar {
         return serialNumber;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public Builder getBuilder() {
-        return builder;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public Wood getWood() {
-        return wood;
-    }
-
    
+
     public double getPrice() {
         return price;
     }

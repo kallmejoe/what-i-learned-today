@@ -16,7 +16,7 @@ public class Inventory {
 
     public Guitar getGuitar(String sn) {
         // int g = guitars.indexOf(sn);
-        // return guitars.get(g);   
+        // return guitars.get(g);
         for (Guitar guitar : guitars) {
             if (guitar.getSerialNumber().equals(sn)) {
                 return guitar;
@@ -31,22 +31,25 @@ public class Inventory {
         List<Guitar> matchingGuitars = new ArrayList<>();
 
         for (Guitar guitar : guitars) {
-            if (guitar != null) {
-                if (!SearchedGuitar.getBuilder().equals(guitar.getBuilder())) {
-                    continue;
-                }
-                if (!SearchedGuitar.getModel().equalsIgnoreCase(guitar.getModel())) {
-                    continue;
-                } 
-            
-                if (!SearchedGuitar.getType().equals(guitar.getType())) {
-                    continue;
-                } 
-            
-                if (!(SearchedGuitar.getWood().equals(guitar.getWood()))) {
-                    continue;
-                }
-                matchingGuitars.add(guitar); 
+        //     if (guitar != null) {
+        //         if (!SearchedGuitar.getBuilder().equals(guitar.getBuilder())) {
+        //             continue;
+        //         }
+        //         if (!SearchedGuitar.getModel().equalsIgnoreCase(guitar.getModel())) {
+        //             continue;
+        //         }
+
+        //         if (!SearchedGuitar.getType().equals(guitar.getType())) {
+        //             continue;
+        //         }
+
+        //         if (!(SearchedGuitar.getWood().equals(guitar.getWood()))) {
+        //             continue;
+        //         }
+        //         matchingGuitars.add(guitar);
+        //     }
+            if(guitar.getSpec.matches(SearchedGuitar)){
+                matchingGuitars.add(guitar);
             }
         }
         return matchingGuitars;
